@@ -1,23 +1,23 @@
 package com.algosolution;
 
+public class  AlgoSolution {
+     public static String FIND(int startindex, int endindex, String text) {
 
+        String[] tableau = text.split("");
+         String resultat="";
+        for(int i = 0; i<tableau.length; i++) {
 
-public class AlgoSolution {
-    public static void FIND(int Start, int End, String Text) {
-        String[] MonTableau = Text.split("");
-
-        for(int i = 0; i < MonTableau.length; ++i) {
-            if (i >= Start && i <= End) {
-                MonTableau[i] = "";
+            if (i >=startindex && i<= endindex) {
+                tableau[i] ="";
             }
-
-            System.out.print(MonTableau[i]);
+             resultat+=tableau[i];
         }
 
-    }
+         return resultat;
+     }
 
     public static void main(String[] args) {
-        FIND(7, 16, "la programation est important");
+        System.out.print(FIND(0, 4, "hello word!"));
     }
 
 }
