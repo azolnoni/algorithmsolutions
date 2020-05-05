@@ -16,8 +16,29 @@ public class  AlgoSolution {
          return resultat;
      }
 
+
+
+    public static int HightNumber(int[] numbers){
+
+        int max=0;
+
+        for (int j=0;j<numbers.length;j++){
+            if(max<numbers[j]){
+                max=numbers[j];
+            }
+        }
+        return max;
+    }
+
+
+
+
     public static void main(String[] args) {
-        System.out.print(FIND(0, 4, "hello word!"));
+        int[] numbers=new int[]{94000 ,150,70000,9,2000,500,1500,4,30000};
+
+        System.out.println(FIND(0, 4, "hello word!"));
+        System.out.print(HightNumber(numbers));
+
     }
 
 }
