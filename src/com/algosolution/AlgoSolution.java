@@ -18,7 +18,7 @@ public class  AlgoSolution {
 
 
 
-    public static int HightNumber(int[] numbers){
+    public static int MaximumNumber(int[] numbers){
 
         int max=0;
 
@@ -37,7 +37,7 @@ public class  AlgoSolution {
         int[] numbers=new int[]{94000 ,150,70000,9,2000,500,1500,4,30000};
 
         System.out.println(FIND(0, 4, "hello word!"));
-        System.out.print(HightNumber(numbers));
+        System.out.print(MaximumNumber(numbers));
 
     }
 
