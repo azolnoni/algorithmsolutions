@@ -28,33 +28,29 @@ public class  AlgoSolution {
 
 
     public static int SecondMaximumNumber(int[] numbers) {
-        int max1 = 0;
-        int max2 = 0;
+         int firstMaximum = 0;
+        int secondMaximum=0;
         for (int j = 0; j < numbers.length; j++) {
-            if (max1 < numbers[j] && max2 < numbers[j]) {
-                if (max2 > max1) {
-                    max1 = max2;
-                    max2 = numbers[j];
-                } else {
-                    max2 = max1;
-                    max1 = numbers[j];
-                }
-            } else {
-                if (max1 > numbers[j] && max2 < numbers[j]) {
-                    max2 = numbers[j];
-                } else {
-                    if (max1 < numbers[j] && max2 > numbers[j]) {
-                        max1 = max2;
-                    }
-                }
+            if (firstMaximum<numbers[j])  {
+                secondMaximum = firstMaximum;
+                firstMaximum = numbers[j];
+
+            }
+            else {
+                if (firstMaximum>numbers[j] && secondMaximum<numbers[j]){
+                    secondMaximum = numbers[j];
+
             }
         }
-        return max2;
+            }
+
+        return secondMaximum;
     }
 
 
+
     public static void main(String[] args) {
-        int[] numbers=new int[]{9000000 ,150,70000000,8000000,2000,500,1500,4,30000000};
+        int[] numbers=new int[]{1,12,13,4,5,6,7,8};
 
         System.out.println(FIND(0, 4, "hello word!"));
         System.out.println(MaximumNumber(numbers));
