@@ -34,7 +34,6 @@ public class  AlgoSolution {
             if (firstMaximum<numbers[j])  {
                 secondMaximum = firstMaximum;
                 firstMaximum = numbers[j];
-
             }
             else {
                 if (firstMaximum>numbers[j] && secondMaximum<numbers[j]){
