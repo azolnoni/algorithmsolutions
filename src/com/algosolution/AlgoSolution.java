@@ -1,6 +1,7 @@
 package com.algosolution;
 
 public class  AlgoSolution {
+
      public static String FIND(int startindex, int endindex, String text) {
 
         String[] tableau = text.split("");
@@ -12,32 +13,78 @@ public class  AlgoSolution {
             }
              resultat+=tableau[i];
         }
-
          return resultat;
      }
 
 
-
-    public static int MaximumNumber(int[] numbers){
-
-        int max=0;
-
-        for (int j=0;j<numbers.length;j++){
-            if(max<numbers[j]){
-                max=numbers[j];
+    public static int maximumNumber(int[] numbers) {
+        int maximum = Integer.MIN_VALUE;
+        for (int j = 0; j < numbers.length; j++) {
+            if (maximum<numbers[j]) {
+                maximum = numbers[j];
             }
         }
-        return max;
+            return maximum;
+        }
+
+
+    public static int secondMaximumNumber(int[] numbers) {
+         int firstMaximum =Integer.MIN_VALUE;
+         int secondMaximum=0;
+        for (int j = 0; j < numbers.length; j++) {
+            if (firstMaximum <numbers[j]){
+                secondMaximum = firstMaximum;
+                firstMaximum = numbers[j];
+            }
+
+            }
+
+        return secondMaximum;
     }
 
 
 
+    public static int secondMaximumNumberSecondOption(int[] numbers) {
+        int firstMaximum =Integer.MIN_VALUE;
+        int secondMaximum=0;
+        for (int j = 0; j < numbers.length; j++) {
+            if (firstMaximum <numbers[j]){
+                secondMaximum = firstMaximum;
+                firstMaximum = numbers[j];
+            } else {
+                if (firstMaximum>numbers[j] && numbers[j]>secondMaximum) {
+                    secondMaximum = numbers[j];
+                }
+            }
+        }
+
+        return secondMaximum;
+    }
+
+
+    public static int smallValue(int[] numbers){
+
+        int firstMinimum=Integer.MAX_VALUE;
+
+        for (int j=0;j<numbers.length;j++){
+            if(firstMinimum>numbers[j]){
+                firstMinimum=numbers[j];
+
+            }
+        }
+        return firstMinimum;
+    }
+
+
 
     public static void main(String[] args) {
-        int[] numbers=new int[]{94000 ,150,70000,9,2000,500,1500,4,30000};
+        int[] numbers=new int[]{15,12,-13,-9,5,-16,7,8};
 
         System.out.println(FIND(0, 4, "hello word!"));
-        System.out.print(MaximumNumber(numbers));
+        System.out.println(maximumNumber(numbers));
+        System.out.println(secondMaximumNumber(numbers));
+        System.out.println(secondMaximumNumberSecondOption(numbers));
+        System.out.print(smallValue(numbers));
 
     }
 
