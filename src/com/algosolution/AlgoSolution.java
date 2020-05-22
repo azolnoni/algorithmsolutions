@@ -22,7 +22,12 @@ public class  AlgoSolution {
         for (int j = 0; j < numbers.length; j++) {
             if (maximum<numbers[j]) {
                 maximum = numbers[j];
+
+
             }
+
+
+
         }
             return maximum;
         }
@@ -76,14 +81,37 @@ public class  AlgoSolution {
     }
 
 
+    public static int countmaximumNumber(int[] numbers) {
+        int maximum = Integer.MIN_VALUE;
+        int expectOutput=0;
+        for (int j = 0; j < numbers.length; j++) {
+            if (maximum<numbers[j]) {
+                maximum = numbers[j];
+                expectOutput=1;
+            }
+            else{
+                if (maximum==numbers[j]){
+                    expectOutput++;
+                }
+
+            }
+
+
+
+        }
+        return expectOutput;
+    }
+
+
 
     public static void main(String[] args) {
-        int[] numbers=new int[]{15,12,-13,-9,5,-16,7,8};
+        int[] numbers=new int[]{13,12,13,-9,5,13,7,13,7,13};
 
         System.out.println(FIND(0, 4, "hello word!"));
         System.out.println(maximumNumber(numbers));
         System.out.println(secondMaximumNumber(numbers));
         System.out.println(secondMaximumNumberSecondOption(numbers));
+        System.out.println(countmaximumNumber(numbers));
         System.out.print(smallValue(numbers));
 
     }
